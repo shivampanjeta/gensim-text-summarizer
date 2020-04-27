@@ -4,6 +4,10 @@ from gensim.summarization.summarizer import summarize
 
 app = Flask(__name__)
 
+@app.route('/public/hc', methods=['GET'])
+def hc():
+    return 'OK'
+
 @app.route('/summarize', methods=['POST'])
 def lambda_handler():
     data = request.data
