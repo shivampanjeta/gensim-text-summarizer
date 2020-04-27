@@ -1,2 +1,8 @@
 gensim
 Flask
+torch
+pandas
+flask
+gevent
+gunicorn
+pyopenssl
