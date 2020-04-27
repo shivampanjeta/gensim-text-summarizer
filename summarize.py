@@ -7,10 +7,9 @@ app = Flask(__name__)
 @app.route('/summarize', methods=['POST'])
 def lambda_handler():
     data = request.data
-    summary = summarize(data)
     if not data:
         abort(make_response(jsonify(message="Request must have raw text"), 400))
-
+    summary = summarize(data)
     return jsonify({
         'summary': summary
     })
