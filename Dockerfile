@@ -1,8 +1,7 @@
-FROM ubuntu
+FROM ubuntu:18.04
 
-WORKDIR /src
-COPY . /src
-RUN pip3 install gensim
-RUN cd /src
-
-CMD ['python3', '-m', 'http.server', '8000']
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 5000
+CMD python ./summarize.py
