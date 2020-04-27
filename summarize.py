@@ -4,7 +4,7 @@ from gensim.summarization.summarizer import summarize
 
 app = Flask(__name__)
 
-@app.route('/public/hc', methods=['GET'])
+@app.route('/ping', methods=['GET'])
 def hc():
     return 'OK'
 
