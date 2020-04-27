@@ -4,9 +4,9 @@ from gensim.summarization.summarizer import summarize
 
 app = Flask(__name__)
 
-@app.route('/ping', methods=['GET'])
-def hc():
-    return 'OK'
+@app.route("/ping", methods=["GET"])
+def ping():
+    return Response(response="\n", status=200)
 
 @app.route('/summarize', methods=['POST'])
 def lambda_handler():
