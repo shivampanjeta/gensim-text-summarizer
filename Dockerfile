@@ -19,4 +19,4 @@ WORKDIR /app
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 EXPOSE 5000
-CMD python ./summarize.py
+ENTRYPOINT ["python3", "./summarize.py"]
