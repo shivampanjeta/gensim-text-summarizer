@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && \
+RUN apt-get update && \ 
+    apt-get install -y --no-install-recommends nginx git \
     apt-get install -y sudo \
     build-essential \
     curl \
@@ -13,7 +14,8 @@ RUN apt-get update && \
     libxext6 \
     libsm6 \
     openssl
- 
+
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY . /app
 WORKDIR /app
 RUN pip3 install --upgrade pip
