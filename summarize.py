@@ -8,7 +8,7 @@ app = Flask(__name__)
 def ping():
     return Response(response="\n", status=200)
 
-@app.route('/summarize', methods=['POST'])
+@app.route('/invocations', methods=['POST'])
 def lambda_handler():
     data = request.data
     if not data:
